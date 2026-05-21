@@ -35,7 +35,9 @@ int main() {
 
          case 4:
           closet:: suggestOutfit(); 
-            break;   
+            break; 
+
+         default: cout << "Please enter number 1 to 5";
       }
    
     

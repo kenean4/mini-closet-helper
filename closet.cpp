@@ -10,6 +10,15 @@ string type[20];
 string color[20];
 string occasion[20];
 
+void printItem(int i){
+   cout << "#" << i + 1 << " ";
+    cout << color[i] << " " ;
+    cout << type[i] << " - ";
+    cout << "ideal for " << occasion[i] << '\n';
+
+}
+
+
 void addItem() {
       //always include parameters when declaring a function
    
@@ -29,7 +38,7 @@ void addItem() {
 
       cout << '\n' << "Congratulations! you now have " << itemCount + 1 << " clothes...pathetic" << '\n';
 
-     if (itemCount == 20){
+     if (itemCount > 20){
         cout << " Unlike your misery, my closet has a limit and you've reched it. ";
      }
 
@@ -39,10 +48,7 @@ void addItem() {
 void viewItem(){
 
  for (int i=0; i< itemCount; i++) {   
-    cout << "#" << i + 1 << " ";
-    cout << color[i] << " " ;
-    cout << type[i] << " - ";
-    cout << "ideal for " << occasion[i] << '\n';
+     printItem(i);
     }
 }
 
@@ -64,10 +70,7 @@ void searchItem() {
           cin >> searchColor;
           for (int i=0; i< itemCount; i++){
               if (color[i] == searchColor){
-                cout << "#" << i + 1 << " ";
-                cout << color[i] << " " ;
-                cout << type[i] << " - ";
-                cout << "ideal for " << occasion[i] << '\n';
+                printItem(i);
 
                 foundColor = true;
                }
@@ -82,11 +85,9 @@ void searchItem() {
           cin >> searchOccasion;
           for (int i=0; i< itemCount; i++){
              if (occasion[i] == searchOccasion){
-                cout << "#" << i + 1 << " ";
-                cout << color[i] << " " ;
-                cout << type[i] << " - ";
-                cout << "ideal for " << occasion[i] << '\n';
-          
+               
+               printItem(i);
+
                 foundOccasion = true;
             }
          }
