@@ -10,6 +10,7 @@ void addItem();
 void viewItem();
 void searchItem(); 
 void suggestOutfit();
+void printItem(int i);
 }
 
 
