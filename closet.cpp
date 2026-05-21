@@ -7,9 +7,9 @@ using namespace std;
 namespace closet {
 const int max_num = 20;
 int itemCount=0;
-string type[max_num];
-string color[max_num];
-string occasion[max_num];
+string* type = new string[max_num];
+string* color = new string[max_num];
+string* occasion = new string[max_num];
 
 void printItem(int i){
    cout << "#" << i + 1 << " ";
@@ -39,7 +39,7 @@ void addItem() {
 
       cout << '\n' << "Congratulations! you now have " << itemCount + 1 << " clothes...pathetic" << '\n';
 
-     if (itemCount > max_num){
+     if (itemCount == max_num){
         cout << " Unlike your misery, my closet has a limit and you've reched it. ";
      }
 

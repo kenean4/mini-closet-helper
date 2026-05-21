@@ -5,12 +5,17 @@ using namespace std;
 #ifndef CLOSET_H
 #define CLOSET_H
 
+
 namespace closet {
 void addItem();
 void viewItem();
 void searchItem(); 
 void suggestOutfit();
 void printItem(int i);
+
+extern string* type;
+extern string* color;
+extern string* occasion;
 }
 
 

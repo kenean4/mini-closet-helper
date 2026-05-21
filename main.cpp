@@ -3,11 +3,10 @@
 #include "closet.h" 
 using namespace std;
 
-int itemCount=0;
 
 int main() {
 
-   int choice;
+   int choice = 0;
 
    while(choice!= 5){
 
@@ -42,6 +41,11 @@ int main() {
    
     
    }   
+
+   delete [] closet::type;
+   delete [] closet::color;
+   delete [] closet::occasion;
+
 
    return 0 ;
 }
