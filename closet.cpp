@@ -6,36 +6,42 @@ using namespace std;
 
 namespace closet {
 const int max_num = 20;
-int itemCount=0;
-string* type = new string[max_num];
-string* color = new string[max_num];
-string* occasion = new string[max_num];
+      int itemCount=0;
+
+class clothingItem {
+   public:
+string type; //= new string[max_num];
+string color; //= new string[max_num];
+string occasion; //= new string[max_num];
 
 void printItem(int i){
    cout << "#" << i + 1 << " ";
     cout << color[i] << " " ;
     cout << type[i] << " - ";
     cout << "ideal for " << occasion[i] << '\n';
+};
 
-}
-
+class Closet {
+   public:
+   int itemCount = 0;
+   clothingItem item[max_num];
 
 void addItem() {
       //always include parameters when declaring a function
    
 
       cout << "Enter type (hoodie, crewneck, jacket, t-shirt, shirt, skirt, sweatpants, jeans, dress, cargo...):";
-      cin >> type[itemCount];
-      cout << "You have entered the type  " << type[itemCount] << '\n';
+      cin >> item[itemCount].type;
+      cout << "You have entered the type  " << item [itemCount].type << '\n';
             
 
       cout <<  "Enter color: ";
-      cin >> color[itemCount];
-      cout << "You have entered the color " << color[itemCount] << '\n';
+      cin >> item[itemCount].color;
+      cout << "You have entered the color " << item[itemCount].color << '\n';
 
       cout << "Enter ideal occassion: ";
-      cin >> occasion[itemCount];
-      cout << "You have entered the occasion " << occasion[itemCount] << '\n';
+      cin >> item[itemCount].occasion;
+      cout << "You have entered the occasion " << item[itemCount]. occasion << '\n';
 
       cout << '\n' << "Congratulations! you now have " << itemCount + 1 << " clothes...pathetic" << '\n';
 
@@ -70,7 +76,7 @@ void searchItem() {
           cout << "Enter color: ";
           cin >> searchColor;
           for (int i=0; i< itemCount; i++){
-              if (color[i] == searchColor){
+              if (item[i].color == searchColor){
                 printItem(i);
 
                 foundColor = true;
@@ -85,7 +91,7 @@ void searchItem() {
           cout << "Enter occasion: ";
           cin >> searchOccasion;
           for (int i=0; i< itemCount; i++){
-             if (occasion[i] == searchOccasion){
+             if (item[i].occasion == searchOccasion){
                
                printItem(i);
 
@@ -144,5 +150,11 @@ int bottomIndex;
     cout << "ideal for " << occasion[bottomIndex] << '\n';
    
    }
+}
+private: 
+
+int itemCount=0;
+         
+};
 }
 }
