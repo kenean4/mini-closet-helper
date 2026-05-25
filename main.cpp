@@ -2,9 +2,11 @@
 #include <string>
 #include "closet.h" 
 using namespace std;
+using namespace closet;
 
 
 int main() {
+   Closet myCloset;
 
    int choice = 0;
 
@@ -21,19 +23,19 @@ int main() {
 
       switch (choice){
          case 1:
-          closet:: addItem(); // types of the function(like void,int ...) isn't needed only the argument is written here.
+          myCloset.addItem(); // types of the function(like void,int ...) isn't needed only the argument is written here.
             break;
          
          case 2:
-          closet:: viewItem();
+          myCloset.viewItem();
             break;
 
          case 3: 
-          closet:: searchItem();
+          myCloset.searchItem();
             break;
 
          case 4:
-          closet:: suggestOutfit(); 
+          myCloset.suggestOutfit(); 
             break; 
 
          default: cout << "Please enter number 1 to 5";
@@ -42,9 +44,6 @@ int main() {
     
    }   
 
-   delete [] closet::type;
-   delete [] closet::color;
-   delete [] closet::occasion;
 
 
    return 0 ;

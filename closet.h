@@ -26,6 +26,9 @@ void addItem();
 void viewItem();
 void searchItem(); 
 void suggestOutfit();
+
+private:
+int itemCount=0;
 };
 }
 

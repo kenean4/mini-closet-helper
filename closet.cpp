@@ -5,29 +5,18 @@
 using namespace std;
 
 namespace closet {
-const int max_num = 20;
-      int itemCount=0;
 
-class clothingItem {
-   public:
-string type; //= new string[max_num];
-string color; //= new string[max_num];
-string occasion; //= new string[max_num];
-
-void printItem(int i){
+void clothingItem:: printItem(int i){
    cout << "#" << i + 1 << " ";
-    cout << color[i] << " " ;
-    cout << type[i] << " - ";
-    cout << "ideal for " << occasion[i] << '\n';
+    cout << color << " " ;
+    cout << type << " - ";
+    cout << "ideal for " << occasion << '\n';
 }
-};
 
-class Closet {
-   public:
-   int itemCount = 0;
-   clothingItem item[max_num];
 
-void addItem() {
+
+
+void Closet :: addItem() {
       //always include parameters when declaring a function
    
 
@@ -53,7 +42,7 @@ void addItem() {
         itemCount++;
 }
 
-void viewItem(){
+void Closet:: viewItem(){
 
  for (int i=0; i< itemCount; i++) {   
      item[i].printItem(i);
@@ -61,7 +50,7 @@ void viewItem(){
 }
 
 
-void searchItem() {
+void Closet:: searchItem() {
    int searchItem ;
    string searchColor = "";
    string searchOccasion = "";
@@ -107,10 +96,11 @@ void searchItem() {
 }
 
 
-void suggestOutfit(){
+void Closet:: suggestOutfit(){
 
 int topIndex;
 int bottomIndex;
+
 
     switch(itemCount){
        case 0:
@@ -145,9 +135,5 @@ int bottomIndex;
    
    }
 }
-private: 
-
-int itemCount=0;
-         
-};
 }
+
