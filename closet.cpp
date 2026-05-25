@@ -130,25 +130,18 @@ int bottomIndex;
              item[topIndex]. type!= "t-shirt" &&
              item[topIndex]. type!= "crewneck");
      
-          cout << "Top: ";
-          cout << color[topIndex] << " " ;
-          cout << type[topIndex] << " - ";
-          cout << "ideal for " << occasion[topIndex] << '\n';
-
+          item[topIndex]. printItem(topIndex);
     
           do { bottomIndex = rand() % itemCount;
          }
           while
-             (type[bottomIndex] != "jeans" &&
-             type[bottomIndex] != "sweatpants" &&
-             type[bottomIndex] != "skirt" &&
-             type[bottomIndex] != "shorts" &&
-             type[bottomIndex] != "cargo" );
+            (item[bottomIndex]. type != "jeans" &&
+             item[bottomIndex]. type != "sweatpants" &&
+             item[bottomIndex]. type != "skirt" &&
+             item[bottomIndex]. type != "shorts" &&
+             item[bottomIndex]. type != "cargo" );
 
-    cout << "Bottom: ";
-    cout << color[bottomIndex] << " " ;
-    cout << type[bottomIndex] << " - ";
-    cout << "ideal for " << occasion[bottomIndex] << '\n';
+          item[bottomIndex]. printItem(bottomIndex);
    
    }
 }
@@ -157,5 +150,4 @@ private:
 int itemCount=0;
          
 };
-}
 }
