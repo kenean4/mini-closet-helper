@@ -19,16 +19,23 @@ string occasion;
 void printItem(int i);
 };
 
+class Top: public clothingItem {
+public: bool isTop() {return true;} 
+};
+
+class Bottom: public clothingItem {
+public: bool isBottom() {return true;}
+};
+
 class Closet{
 public:
-clothingItem item [max_num];
+int itemCount=0;
+clothingItem* item [max_num];
 void addItem();
 void viewItem();
 void searchItem(); 
 void suggestOutfit();
 
-private:
-int itemCount=0;
 };
 }
 

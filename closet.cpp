@@ -19,19 +19,24 @@ void clothingItem:: printItem(int i){
 void Closet :: addItem() {
       //always include parameters when declaring a function
    
+      
+      if (item[itemCount]->type == "hoodie"|| item[itemCount]->type == "crewneck" || 
+          item[itemCount]->type == "t-shirt"|| item[itemCount]->type == "jacket"|| item[itemCount]->type == "shirt")
+      { item[itemCount] = new Top();}   
+      else{item[itemCount] = new Bottom();}
+
 
       cout << "Enter type (hoodie, crewneck, jacket, t-shirt, shirt, skirt, sweatpants, jeans, dress, cargo...):";
-      cin >> item[itemCount].type;
-      cout << "You have entered the type  " << item [itemCount].type << '\n';
-            
+      cin >> item[itemCount]->type;
+      cout << "You have entered the type  " << item [itemCount]->type << '\n';
 
       cout <<  "Enter color: ";
-      cin >> item[itemCount].color;
-      cout << "You have entered the color " << item[itemCount].color << '\n';
+      cin >> item[itemCount]->color;
+      cout << "You have entered the color " << item[itemCount]->color << '\n';
 
       cout << "Enter ideal occassion: ";
-      cin >> item[itemCount].occasion;
-      cout << "You have entered the occasion " << item[itemCount]. occasion << '\n';
+      cin >> item[itemCount]->occasion;
+      cout << "You have entered the occasion " << item[itemCount]-> occasion << '\n';
 
       cout << '\n' << "Congratulations! you now have " << itemCount + 1 << " clothes...pathetic" << '\n';
 
@@ -45,7 +50,7 @@ void Closet :: addItem() {
 void Closet:: viewItem(){
 
  for (int i=0; i< itemCount; i++) {   
-     item[i].printItem(i);
+     item[i]->printItem(i);
     }
 }
 
@@ -66,8 +71,8 @@ void Closet:: searchItem() {
           cout << "Enter color: ";
           cin >> searchColor;
           for (int i=0; i< itemCount; i++){
-              if (item[i].color == searchColor){
-                item[i].printItem(i);
+              if (item[i]->color == searchColor){
+                item[i]->printItem(i);
 
                 foundColor = true;
                }
@@ -81,9 +86,9 @@ void Closet:: searchItem() {
           cout << "Enter occasion: ";
           cin >> searchOccasion;
           for (int i=0; i< itemCount; i++){
-             if (item[i].occasion == searchOccasion){
+             if (item[i]->occasion == searchOccasion){
                
-               item[i].printItem(i);
+               item[i]->printItem(i);
 
                 foundOccasion = true;
             }
@@ -114,24 +119,24 @@ int bottomIndex;
           do { topIndex = rand() % itemCount;}
       
           while
-            (item[topIndex]. type != "hoodie" &&
-             item[topIndex]. type!= "jacket" &&
-             item[topIndex]. type!= "shirt" &&
-             item[topIndex]. type!= "t-shirt" &&
-             item[topIndex]. type!= "crewneck");
+            (item[topIndex]-> type != "hoodie" &&
+             item[topIndex]-> type!= "jacket" &&
+             item[topIndex]-> type!= "shirt" &&
+             item[topIndex]-> type!= "t-shirt" &&
+             item[topIndex]-> type!= "crewneck");
      
-          item[topIndex]. printItem(topIndex);
+          item[topIndex]-> printItem(topIndex);
     
           do { bottomIndex = rand() % itemCount;
          }
           while
-            (item[bottomIndex]. type != "jeans" &&
-             item[bottomIndex]. type != "sweatpants" &&
-             item[bottomIndex]. type != "skirt" &&
-             item[bottomIndex]. type != "shorts" &&
-             item[bottomIndex]. type != "cargo" );
+            (item[bottomIndex]-> type != "jeans" &&
+             item[bottomIndex]-> type != "sweatpants" &&
+             item[bottomIndex]-> type != "skirt" &&
+             item[bottomIndex]-> type != "shorts" &&
+             item[bottomIndex]-> type != "cargo" );
 
-          item[bottomIndex]. printItem(bottomIndex);
+          item[bottomIndex]-> printItem(bottomIndex);
    
    }
 }
