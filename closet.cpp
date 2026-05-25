@@ -19,6 +19,7 @@ void printItem(int i){
     cout << color[i] << " " ;
     cout << type[i] << " - ";
     cout << "ideal for " << occasion[i] << '\n';
+}
 };
 
 class Closet {
@@ -55,7 +56,7 @@ void addItem() {
 void viewItem(){
 
  for (int i=0; i< itemCount; i++) {   
-     printItem(i);
+     item[i].printItem(i);
     }
 }
 
@@ -77,7 +78,7 @@ void searchItem() {
           cin >> searchColor;
           for (int i=0; i< itemCount; i++){
               if (item[i].color == searchColor){
-                printItem(i);
+                item[i].printItem(i);
 
                 foundColor = true;
                }
@@ -93,7 +94,7 @@ void searchItem() {
           for (int i=0; i< itemCount; i++){
              if (item[i].occasion == searchOccasion){
                
-               printItem(i);
+               item[i].printItem(i);
 
                 foundOccasion = true;
             }
@@ -123,11 +124,11 @@ int bottomIndex;
           do { topIndex = rand() % itemCount;}
       
           while
-             (type[topIndex] != "hoodie" &&
-             type[topIndex] != "jacket" &&
-             type[topIndex] != "shirt" &&
-             type[topIndex] != "t-shirt" &&
-             type[topIndex] != "crewneck");
+            (item[topIndex]. type != "hoodie" &&
+             item[topIndex]. type!= "jacket" &&
+             item[topIndex]. type!= "shirt" &&
+             item[topIndex]. type!= "t-shirt" &&
+             item[topIndex]. type!= "crewneck");
      
           cout << "Top: ";
           cout << color[topIndex] << " " ;
