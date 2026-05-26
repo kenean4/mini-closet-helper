@@ -105,7 +105,8 @@ void Closet:: suggestOutfit(){
 
 int topIndex;
 int bottomIndex;
-
+bool hasTop = false;
+bool hasBottom = false;
 
     switch(itemCount){
        case 0:
@@ -116,26 +117,25 @@ int bottomIndex;
        break;
    
        default: 
+
+          for(int i=0; i < itemCount; i++ ){
+             if(item[i] -> isTop()) { hasTop = true;} 
+             if (item[i] -> isBottom()) {hasBottom = true;}
+          }
+          if (hasTop == false || hasBottom == false){
+              cout << "Are you comfortable with being only partially clothed? Yea didn't think so";}
+              return;
+
           do { topIndex = rand() % itemCount;}
       
           while
-            (item[topIndex]-> type != "hoodie" &&
-             item[topIndex]-> type!= "jacket" &&
-             item[topIndex]-> type!= "shirt" &&
-             item[topIndex]-> type!= "t-shirt" &&
-             item[topIndex]-> type!= "crewneck");
-     
+            (!item[topIndex]-> isTop());
           item[topIndex]-> printItem(topIndex);
     
           do { bottomIndex = rand() % itemCount;
          }
           while
-            (item[bottomIndex]-> type != "jeans" &&
-             item[bottomIndex]-> type != "sweatpants" &&
-             item[bottomIndex]-> type != "skirt" &&
-             item[bottomIndex]-> type != "shorts" &&
-             item[bottomIndex]-> type != "cargo" );
-
+            (!item[bottomIndex]-> isBottom());
           item[bottomIndex]-> printItem(bottomIndex);
    
    }

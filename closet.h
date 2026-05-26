@@ -16,6 +16,8 @@ string type;
 string color;
 string occasion;
 
+virtual bool isTop() {return false;}
+virtual bool isBottom() {return false;}
 void printItem(int i);
 };
 
