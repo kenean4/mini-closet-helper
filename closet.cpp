@@ -1,5 +1,7 @@
 #include <iostream>
 #include <cstdlib>
+#include <fstream>
+#include <sstream>
 #include "closet.h"
  
 using namespace std;
@@ -52,8 +54,9 @@ void Closet :: addItem() {
      if (itemCount >= max_num ){
         cout << " Unlike your misery, my closet has a limit and you've reched it. ";
      }
-
+       
         itemCount++;
+        saveCloset();
 }
 
 void Closet:: viewItem(){
@@ -145,5 +148,41 @@ bool hasBottom = false;
           item[bottomIndex]-> printItem(bottomIndex);
    }
 }
+void Closet:: saveCloset() {
+   ofstream closetFile ("closet.txt");
+   for (int i=0; i< itemCount; i++){
+      closetFile <<item[i]->type <<","<<item[i]->color<<","<< item[i]->occasion<<'\n';
+   } 
+   closetFile.close();
+
+}
+void Closet:: loadCloset(){
+   ifstream closetFile("closet.txt");
+   string nextLine;
+   string typ, col, occ;
+
+   while(getline(closetFile,nextLine)){
+      stringstream parser(nextLine);
+      getline(parser, typ, ',');
+      getline(parser, col, ',');
+      getline(parser, occ);
+
+       if (typ == "hoodie"|| typ == "crewneck" || 
+         typ == "t-shirt"|| typ == "jacket"|| typ== "shirt")
+        {item[itemCount] = new Top();} 
+
+      else if (typ == "skirt"|| typ == "jeans"|| typ == "cargo"
+               || typ == "shorts"|| typ == "sweatpants") 
+            {item[itemCount] = new Bottom();} 
+
+      item[itemCount]->type= typ;
+      item[itemCount]->color= col;
+      item[itemCount]->occasion= occ;
+
+      itemCount++;
+   }
+   closetFile.close();
+}
+
 }
 

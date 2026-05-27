@@ -7,7 +7,8 @@ using namespace closet;
 
 int main() {
   Closet myCloset;
-  
+  myCloset.loadCloset();
+ 
   int choice = 0;
 
    while(choice!= 5){
@@ -44,8 +45,8 @@ int main() {
     
    }   
 
-
-
+myCloset.saveCloset();
+   
    return 0 ;
 }
 

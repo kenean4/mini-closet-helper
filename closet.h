@@ -39,6 +39,8 @@ void addItem();
 void viewItem();
 void searchItem(); 
 void suggestOutfit();
+void loadCloset();
+void saveCloset();
 };
 }
 
