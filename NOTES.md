@@ -113,3 +113,42 @@ myCloset.addItem():
 class the function belongs to, where the logic lives and what it can access.
 ★ myCloset.addItem() is the actual call telling the compiler to go to the object myCloset and call
 the function addItem to do its job.
+★ polymorphism= taking the same function from a parent class and giving it different characteristics on the children classes like the isTop and isBottom functions
+
+DATA PERSISTENCE
+----------------
+
+STREAMS:
+★ cin is a stream that delivers data from the keyboard
+★ cout is a stream that delivers data to the console
+★ ifstream is a stream that delivers data from a file
+★ ofstream is a stream that delivers data to a file
+★ stringstream is the same idea but the data comes from a string instead
+
+getline(file, nextLine):
+★ gets the next line from the file and stores it in nextLine
+★ remembers where it left off automatically so each call gets the next line
+★ when the file runs out of lines it returns false and the while loop stops
+
+getline(parser, typ, ','):
+★PARSING= splitting a line into separate values
+★ gets everything from the stringstream until it hits a comma and stores it in typ
+★ the third argument, the comma, is the delimiter — it tells getline where to stop reading
+★ the next getline continues from where the previous one ended which is right after the comma
+★ the delimiter is consumed and discarded automatically — it doesn't appear in what gets stored
+
+saveCloset:
+★ opens closet.txt and wipes it completely then rewrites all items from scratch
+★ the items aren't lost when the file is wiped because they still exist on the heap
+★ the for loop just follows each pointer and writes the data of the object it points to into the file
+
+loadCloset at startup:
+★ before the user sees the menu, the program reads the file and fills up item[] and itemCount
+with all the previously saved clothes so the data is already there when the user does anything
+★ itemCount starts at 0 when the program restarts but loadCloset increments it as it loads
+each item so it fixes itself automatically during loading
+
+stringstream parser(nextLine):
+★ creates a stringstream object loaded with the contents of nextLine
+★ lets you read from a string piece by piece the same way you read from a file
+★ must be inside the while loop so it gets a fresh line each time
