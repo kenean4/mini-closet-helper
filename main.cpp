@@ -1,5 +1,5 @@
 #include <iostream>
-#include "closet.h" 
+#include "closet.h"
 using namespace std;
 using namespace closet;
 
@@ -38,7 +38,9 @@ int main() {
          case 4:
           myCloset.suggestOutfit(); 
             break; 
-
+            
+         case 5:
+            break;
          default: cout << "Please enter number 1 to 5";
       }
    

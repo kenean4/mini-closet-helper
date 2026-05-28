@@ -3,20 +3,11 @@
 #include <fstream>
 #include <sstream>
 #include "closet.h"
+
  
 using namespace std;
 
 namespace closet {
-
-void clothingItem:: printItem(int i){
-   cout << "#" << i + 1 << " ";
-    cout << color << " " ;
-    cout << type << " - ";
-    cout << "ideal for " << occasion << '\n';
-}
-
-
-
 
 void Closet :: addItem() {
       
